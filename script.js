@@ -25,11 +25,11 @@ function setGradient() {
 
 // This function creates random colors (grabbed it from stackoverflow).
 // Appears to be 'randomly'(pun intended) failing. Maybe someone can help?
-// (fail example: The specified value "#f7dcc" does not conform to the 
-// required format.)
+// (fail example: The specified value "#f7dcc" does not conform to the required format.)
+// Fixed: replaced |Math.floor(Math.random() * 16777215).toString(16)| with |Math.random().toString(16).slice(2,8)|
 function randomColor() {
-	var newColor1 = '#'+ Math.floor(Math.random() * 16777215).toString(16);
-	var newColor2 = '#'+ Math.floor(Math.random() * 16777215).toString(16);
+	var newColor1 = '#'+ Math.random().toString(16).slice(2,8);
+	var newColor2 = '#'+ Math.random().toString(16).slice(2,8);
 	
 	// Adding the random colors to the input value 
 	color1.value = newColor1;
